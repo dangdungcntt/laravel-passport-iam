@@ -1,6 +1,7 @@
 {
     "name": "nddcoder/laravel-passport-iam",
     "description": "Package for integrate laravel app with Passport IAM",
+    "license": "MIT",
     "authors": [
         {
             "name": "dangdung",
