@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dangdung
- * Date: 04/01/2019
- * Time: 00:22
- */
 
 namespace Nddcoder\PassportIAM\Services;
 
-use Nddcoder\PassportIAM\Http\Clients\HttpClient;
+use Nddcoder\HttpClient\HttpClient;
 
 class IAMService implements IAMServiceInterface
 {
@@ -21,7 +15,7 @@ class IAMService implements IAMServiceInterface
 
     public function currentUser($token)
     {
-        $url = config('passport-iam.base_url') . '/api/user';
+        $url = config('passport-iam.base_url') . '/' . config('passport-iam.path.user');
         $response = $this->http->get($url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $token,
@@ -38,7 +32,7 @@ class IAMService implements IAMServiceInterface
 
     public function login($credentials)
     {
-        $url = config('passport-iam.base_url') . '/oauth/token';
+        $url = config('passport-iam.base_url') . '/' . config('passport-iam.path.oauth_token');
         $params = [
             'grant_type' => 'password',
             'client_id' => config('passport-iam.client_id'),

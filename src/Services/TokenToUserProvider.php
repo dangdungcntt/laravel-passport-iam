@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dangdung
- * Date: 03/01/2019
- * Time: 23:36
- */
 
 namespace Nddcoder\PassportIAM\Services;
 
@@ -17,7 +11,9 @@ class TokenToUserProvider extends EloquentUserProvider implements UserProvider
     {
         $iamUser = app(IAMServiceInterface::class)->currentUser($token);
         $user = empty($iamUser) ? null :
-            $this->retrieveByCredentials(['uuid' => data_get($iamUser, 'uuid')]);
+            $this->retrieveByCredentials([
+                config('passport-iam.mapping_field.local') => data_get($iamUser, config('passport-iam.mapping_field.iam'))
+            ]);
 
         if (empty($user)) {
             return null;

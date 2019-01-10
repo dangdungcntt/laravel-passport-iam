@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dangdung
- * Date: 03/01/2019
- * Time: 23:13
- */
 
 namespace Nddcoder\PassportIAM\Services;
 
