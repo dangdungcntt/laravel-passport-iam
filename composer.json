@@ -1,0 +1,25 @@
+{
+    "name": "nddcoder/laravel-passport-iam",
+    "description": "Package for integrate laravel app with Passport IAM",
+    "authors": [
+        {
+            "name": "dangdung",
+            "email": "dangdungcntt@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "6.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nddcoder\\PassportIAM\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nddcoder\\PassportIAM\\IAMServiceProvider"
+            ]
+        }
+    }
+}
