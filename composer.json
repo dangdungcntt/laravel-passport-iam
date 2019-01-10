@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "nddcoder/laravel-http-client": "*"
+        "nddcoder/laravel-http-client": "0.1.*"
     },
     "autoload": {
         "psr-4": {
