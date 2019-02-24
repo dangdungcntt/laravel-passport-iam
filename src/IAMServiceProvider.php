@@ -5,8 +5,6 @@ namespace Nddcoder\PassportIAM;
 use Auth;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Support\ServiceProvider;
-use Nddcoder\PassportIAM\Http\Clients\GuzzleClient;
-use Nddcoder\PassportIAM\Http\Clients\HttpClient;
 use Nddcoder\PassportIAM\Services\IAMGuard;
 use Nddcoder\PassportIAM\Services\IAMService;
 use Nddcoder\PassportIAM\Services\IAMServiceInterface;
@@ -52,7 +50,6 @@ class IAMServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(HttpClient::class, GuzzleClient::class);
         $this->app->singleton(IAMServiceInterface::class, IAMService::class);
     }
 }
